@@ -1,0 +1,342 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #ddd;
+        background-color: #1a1a1a;
+    }
+    
+    input, select, textarea {
+        background-color: #2d2d2d;
+        color: #ddd;
+        border-color: #555;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+        border-color: #007aff;
+        box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.25);
+    }
+    
+    .field-group label {
+        color: #ddd;
+    }
+    
+    .primary-btn {
+        background-color: #007aff;
+    }
+    
+    .secondary-btn {
+        background-color: #555;
+    }
+    
+    .toast {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+    }
+}
+
+/* Layout */
+header {
+    background-color: #007aff;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header nav {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+/* Form styling */
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #007aff;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    fieldset {
+        background-color: #2d2d2d;
+        border-color: #555;
+    }
+}
+
+legend {
+    font-weight: bold;
+    color: #007aff;
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+}
+
+.field-group {
+    margin-bottom: 1.5rem;
+}
+
+.field-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.25);
+}
+
+.field-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Buttons */
+button {
+    min-height: 44px;
+    /* Thumb-friendly tap target */
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.primary-btn {
+    background-color: #007aff;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+}
+
+.secondary-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #545b62;
+}
+
+/* Photo preview */
+.photo-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.photo-preview img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+.photo-preview .photo-item {
+    position: relative;
+    display: inline-block;
+}
+
+.photo-preview .delete-photo {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.8rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* List view */
+#intakes-list {
+    margin-top: 1rem;
+}
+
+.intake-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .intake-item {
+        background-color: #2d2d2d;
+        border-color: #555;
+    }
+}
+
+.intake-item h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #007aff;
+}
+
+.intake-item .intake-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+    .intake-item .intake-meta {
+        color: #aaa;
+    }
+}
+
+.intake-item .intake-actions {
+    margin-top: 0.5rem;
+}
+
+.intake-item button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Search box */
+#search-intakes {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Detail view */
+#intake-detail-content {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    white-space: pre-line;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+    #intake-detail-content {
+        background-color: #2d2d2d;
+        color: #ddd;
+    }
+}
+
+/* Toast notification */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* Hidden utility class */
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+    main {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .field-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .field-group.full-width {
+        grid-column: 1 / -1;
+    }
+}

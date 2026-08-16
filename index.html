@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Field Intake</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#007aff">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <header>
+        <h1>Field Intake</h1>
+        <nav>
+            <a href="#saved-list" onclick="event.preventDefault(); document.getElementById('saved-list').classList.remove('hidden'); document.getElementById('intake-form').classList.add('hidden'); document.getElementById('intake-detail').classList.add('hidden');">Saved Intakes</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Intake Form -->
+        <section id="intake-form">
+            <h2>New Customer Intake</h2>
+
+            <!-- Customer Section -->
+            <fieldset>
+                <legend>Customer Information</legend>
+                <div class="field-group">
+                    <label for="customer-name">Name *</label>
+                    <input type="text" id="customer-name" required autocomplete="name">
+                </div>
+                <div class="field-group">
+                    <label for="customer-phone">Phone *</label>
+                    <input type="tel" id="customer-phone" required autocomplete="tel">
+                </div>
+                <div class="field-group">
+                    <label for="customer-email">Email</label>
+                    <input type="email" id="customer-email" autocomplete="email">
+                </div>
+                <div class="field-group">
+                    <label for="customer-address">Street Address</label>
+                    <input type="text" id="customer-address" autocomplete="street-address">
+                </div>
+                <div class="field-group">
+                    <label for="customer-city">City</label>
+                    <input type="text" id="customer-city" autocomplete="address-level2">
+                </div>
+                <div class="field-group">
+                    <label for="customer-state">State</label>
+                    <input type="text" id="customer-state" maxlength="2" placeholder="CT">
+                </div>
+                <div class="field-group">
+                    <label for="customer-zip">ZIP Code</label>
+                    <input type="text" id="customer-zip" maxlength="10" inputmode="numeric" autocomplete="postal-code">
+                </div>
+                <div class="field-group">
+                    <label for="customer-best-time">Best Time to Call</label>
+                    <input type="text" id="customer-best-time" placeholder="e.g. Evenings, Weekends">
+                </div>
+                <button type="button" id="copy-address-btn" class="secondary-btn">Copy to Property Address</button>
+            </fieldset>
+
+            <!-- Property Section -->
+            <fieldset>
+                <legend>Property Information</legend>
+                <div class="field-group">
+                    <label for="property-address">Property Address *</label>
+                    <input type="text" id="property-address" required>
+                </div>
+                <div class="field-group">
+                    <label for="lawn-condition">Lawn Condition</label>
+                    <select id="lawn-condition">
+                        <option value="">Select condition</option>
+                        <option value="excellent">Excellent</option>
+                        <option value="good">Good</option>
+                        <option value="fair">Fair</option>
+                        <option value="poor">Poor</option>
+                        <option value="overgrown">Overgrown</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label for="lawn-size">Lawn Size</label>
+                    <select id="lawn-size">
+                        <option value="">Select size</option>
+                        <option value="small">Small (up to 1,000 sq ft)</option>
+                        <option value="medium">Medium (1,000 - 5,000 sq ft)</option>
+                        <option value="large">Large (5,000+ sq ft)</option>
+                        <option value="custom">Custom sq ft</option>
+                    </select>
+                </div>
+                <div class="field-group custom-size" id="custom-lawn-size-group" style="display:none;">
+                    <label for="custom-lawn-size">Custom Size (sq ft)</label>
+                    <input type="number" id="custom-lawn-size" min="1" inputmode="numeric">
+                </div>
+                <div class="field-group">
+                    <label for="flower-beds">Number of Flower Beds</label>
+                    <input type="number" id="flower-beds" min="0" inputmode="numeric">
+                </div>
+                <div class="field-group">
+                    <label for="walkways">Walkways</label>
+                    <select id="walkways">
+                        <option value="">Select option</option>
+                        <option value="none">None</option>
+                        <option value="some">Some</option>
+                        <option value="lots">Lots</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label for="driveway">Driveway</label>
+                    <select id="driveway">
+                        <option value="">Select type</option>
+                        <option value="none">None</option>
+                        <option value="gravel">Gravel</option>
+                        <option value="asphalt">Asphalt</option>
+                        <option value="paver">Paver</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label for="fences">Fences</label>
+                    <select id="fences">
+                        <option value="">Select option</option>
+                        <option value="none">None</option>
+                        <option value="some">Some</option>
+                        <option value="lots">Lots</option>
+                    </select>
+                </div>
+                <div class="field-group full-width">
+                    <label for="obstacles-notes">Obstacles / Notes</label>
+                    <textarea id="obstacles-notes" placeholder="Trees, rocks, steep slopes, access notes, etc."></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Job Section -->
+            <fieldset>
+                <legend>Job Information</legend>
+                <div class="field-group">
+                    <label for="job-type">Job Type *</label>
+                    <select id="job-type" required>
+                        <option value="">Select job type</option>
+                        <option value="mow">Mow</option>
+                        <option value="cleanup">Cleanup</option>
+                        <option value="mulch">Mulch</option>
+                        <option value="hedge-trim">Hedge / Trim</option>
+                        <option value="flower-bed-install">Flower Bed Install</option>
+                        <option value="leaf-removal">Leaf Removal</option>
+                        <option value="snow">Snow</option>
+                        <option value="full-care-package">Full Care Package</option>
+                        <option value="estimate">Estimate</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label for="job-date">Job Date</label>
+                    <input type="date" id="job-date">
+                </div>
+                <div class="field-group">
+                    <label for="job-status">Job Status *</label>
+                    <select id="job-status" required>
+                        <option value="">Select status</option>
+                        <option value="lead">Lead</option>
+                        <option value="estimate">Estimate</option>
+                        <option value="scheduled">Scheduled</option>
+                        <option value="quoted">Quoted</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label for="price-quote">Price Quote ($)</label>
+                    <input type="number" id="price-quote" min="0" step="0.01" inputmode="decimal">
+                </div>
+                <div class="field-group full-width">
+                    <label for="job-notes">Job Notes</label>
+                    <textarea id="job-notes" placeholder="Scope, special requests, agreed price, etc."></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Photos -->
+            <fieldset>
+                <legend>Photos</legend>
+                <div class="field-group">
+                    <label for="photo-upload">Property Photos</label>
+                    <input type="file" id="photo-upload" accept="image/*" capture="environment" multiple>
+                    <div id="photo-preview" class="photo-preview"></div>
+                </div>
+            </fieldset>
+
+            <button type="button" id="save-intake-btn" class="primary-btn">Save Intake</button>
+            <button type="button" class="secondary-btn" onclick="document.getElementById('saved-list').classList.remove('hidden'); document.getElementById('intake-form').classList.add('hidden');">View Saved Intakes</button>
+        </section>
+
+        <!-- Saved List View -->
+        <section id="saved-list" class="hidden">
+            <h2>Saved Intakes</h2>
+            <input type="text" id="search-intakes" placeholder="Search by customer name...">
+            <div id="intakes-list"></div>
+            <button type="button" id="export-all-csv-btn" class="secondary-btn">Export All CSV</button>
+            <button type="button" class="secondary-btn" onclick="document.getElementById('saved-list').classList.add('hidden'); document.getElementById('intake-form').classList.remove('hidden');">New Intake</button>
+        </section>
+
+        <!-- Detail View -->
+        <section id="intake-detail" class="hidden">
+            <button type="button" id="back-to-list-btn" class="secondary-btn">&larr; Back to List</button>
+            <div id="intake-detail-content"></div>
+            <button type="button" id="copy-summary-btn" class="primary-btn">Copy Summary</button>
+            <button type="button" id="download-csv-btn" class="secondary-btn">Download CSV</button>
+        </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
