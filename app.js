@@ -660,7 +660,14 @@ class App {
     }
 
     resetForm() {
-        document.getElementById('intake-form').reset();
+        const form = document.getElementById('intake-form');
+        form.querySelectorAll('input, select, textarea').forEach(el => {
+            if (el.type === 'checkbox' || el.type === 'radio') {
+                el.checked = false;
+            } else {
+                el.value = '';
+            }
+        });
         document.getElementById('custom-lawn-size-group').style.display = 'none';
         document.getElementById('photo-preview').innerHTML = '';
         this.photos = [];
