@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Field Intake</title>
+    <title>New Era Field Intake</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.webmanifest">
-    <meta name="theme-color" content="#007aff">
+    <meta name="theme-color" content="#2E7D32">
     <link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
     <header>
+        <img id="brand-logo" src="assets/logo.jpg" alt="New Era Services">
         <h1>Field Intake</h1>
         <nav>
             <a href="#saved-list" onclick="event.preventDefault(); document.getElementById('saved-list').classList.remove('hidden'); document.getElementById('intake-form').classList.add('hidden'); document.getElementById('intake-detail').classList.add('hidden');">Saved Intakes</a>
@@ -206,6 +207,10 @@
     </main>
 
     <div id="toast" class="toast hidden"></div>
+
+    <footer>
+        <p>New Era Services &middot; Lawn Care &amp; Property Maintenance</p>
+    </footer>
 
     <script src="app.js"></script>
 </body>

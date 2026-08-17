@@ -1,5 +1,15 @@
-Field Intake PWA - Offline-first customer intake app for landscape businesses
-Open index.html in a browser to run locally, or serve with any static web server
-Install on Android: visit site in Chrome, tap menu -> "Install App"
-All data stored locally using IndexedDB, works completely offline
-Built with HTML/CSS/JS - no build step or framework required
+# New Era Field Intake
+
+Offline-first customer intake app for New Era Services (Lawn Care & Property
+Maintenance). Works on your phone with no signal once loaded.
+
+## Run locally
+`python -m http.server 8123` in this folder, open `http://127.0.0.1:8123`.
+
+## Install on Android
+Open the URL in Chrome, tap the menu, choose "Add to Home screen".
+It then works offline in the field.
+
+## Features
+Customer + property + job intake, photo capture, save to device (IndexedDB),
+copy-paste summary and CSV export for entering into Yardbook.

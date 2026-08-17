@@ -1,11 +1,12 @@
 // Service Worker for Yardbook Field Intake PWA
-const CACHE_NAME = 'yardbook-intake-v1';
+const CACHE_NAME = 'yardbook-intake-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/styles.css',
   '/app.js',
   '/manifest.webmanifest',
+  '/assets/logo.jpg',
   '/icons/icon-192.png',
   '/icons/icon-512.png'
 ];

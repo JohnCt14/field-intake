@@ -28,7 +28,7 @@ body {
     }
     
     input:focus, select:focus, textarea:focus {
-        border-color: #007aff;
+        border-color: #2E7D32;
         box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.25);
     }
     
@@ -37,7 +37,7 @@ body {
     }
     
     .primary-btn {
-        background-color: #007aff;
+        background-color: #2E7D32;
     }
     
     .secondary-btn {
@@ -52,16 +52,27 @@ body {
 
 /* Layout */
 header {
-    background-color: #007aff;
-    color: white;
+    background-color: #ffffff;
+    color: #2E7D32;
     padding: 1rem;
     text-align: center;
     position: relative;
+    border-bottom: 3px solid #2E7D32;
+}
+
+#brand-logo {
+    max-width: 230px;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.25rem auto;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 1.5rem;
+    margin: 0.25rem 0 0 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2E7D32;
+    letter-spacing: 0.5px;
 }
 
 header nav {
@@ -71,9 +82,19 @@ header nav {
 }
 
 header nav a {
-    color: white;
+    color: #2E7D32;
     text-decoration: none;
     font-size: 0.9rem;
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    padding: 1.25rem 1rem;
+    color: #4a7c52;
+    font-size: 0.85rem;
+    border-top: 1px solid #e0e8e0;
+    margin-top: 2rem;
 }
 
 main {
@@ -86,7 +107,7 @@ section {
 }
 
 h2 {
-    color: #007aff;
+    color: #2E7D32;
     margin-bottom: 1rem;
     font-size: 1.25rem;
 }
@@ -108,7 +129,7 @@ fieldset {
 
 legend {
     font-weight: bold;
-    color: #007aff;
+    color: #2E7D32;
     font-size: 1.1rem;
     padding: 0 0.5rem;
 }
@@ -138,7 +159,7 @@ legend {
 .field-group select:focus,
 .field-group textarea:focus {
     outline: none;
-    border-color: #007aff;
+    border-color: #2E7D32;
     box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.25);
 }
 
@@ -164,12 +185,12 @@ button {
 }
 
 .primary-btn {
-    background-color: #007aff;
+    background-color: #2E7D32;
     color: white;
 }
 
 .primary-btn:hover {
-    background-color: #0056b3;
+    background-color: #1B5E20;
 }
 
 .secondary-btn {
@@ -246,7 +267,7 @@ button {
 .intake-item h3 {
     margin: 0;
     font-size: 1.1rem;
-    color: #007aff;
+    color: #2E7D32;
 }
 
 .intake-item .intake-meta {
